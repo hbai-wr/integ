@@ -1,0 +1,6 @@
+libfdt (1.4.4-1.tis) UNRELEASED; urgency=low
+
+  * Initial release. Closes: #nnnn
+    <nnnn is the bug number of your ITP>
+
+ --  <>  Mon, 29 Mar 2021 06:53:23 +0000

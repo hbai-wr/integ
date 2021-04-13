@@ -1,0 +1,34 @@
+From 72d9f3351dcf154320add16431c60bac63e1106c Mon Sep 17 00:00:00 2001
+From: Willy Tarreau <w@1wt.eu>
+Date: Fri, 29 Mar 2019 18:13:36 +0100
+Subject: [PATCH] BUILD: chunk: properly declare pool_head_trash as extern
+
+This one was also declared without the extern modifier in an include
+file.
+
+This needs to be backported to 1.9.
+
+backport commit 72d9f3351dcf154320add16431c60bac63e1106c upstream
+
+Signed-off-by: Yue Tao <Yue.Tao@windriver.com>
+
+---
+ include/common/chunk.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/include/common/chunk.h b/include/common/chunk.h
+index 734e444c5..a1a3eb779 100644
+--- a/include/common/chunk.h
++++ b/include/common/chunk.h
+@@ -36,7 +36,7 @@ struct chunk {
+ 	int len;	/* current size of the string from first to last char. <0 = uninit. */
+ };
+ 
+-struct pool_head *pool_head_trash;
++extern struct pool_head *pool_head_trash;
+ 
+ /* function prototypes */
+ 
+-- 
+2.17.1
+

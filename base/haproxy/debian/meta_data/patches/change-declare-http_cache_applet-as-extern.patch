@@ -1,0 +1,19 @@
+change declare of http_cache_applet as extern
+
+fix multiple definition of `http_cache_applet'
+
+Signed-off-by: Yue Tao <Yue.Tao@windriver.com>
+
+diff --git a/include/types/cache.h b/include/types/cache.h
+index 3c43006..4ea1a31 100644
+--- a/include/types/cache.h
++++ b/include/types/cache.h
+@@ -1,7 +1,7 @@
+ #ifndef _TYPES_CACHE_H
+ #define _TYPES_CACHE_H
+ 
+-struct applet http_cache_applet;
++extern struct applet http_cache_applet;
+ 
+ #endif /*_TYPES_CACHE_H */
+ 

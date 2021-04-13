@@ -1,0 +1,22 @@
+0001-BUG-MEDIUM-http-also-reject-messages-where-chunked-i.patch
+0002-Use-dpkg-buildflags-to-build-halog.patch
+haproxy.service-start-after-syslog.patch
+haproxy.service-add-documentation.patch
+haproxy.service-use-environment-variables.patch
+
+# 20191125 security issue (CVE-2019-19330) about HTTP/2 header validation
+0001-MINOR-ist-add-ist_find_ctl.patch
+0002-BUG-MAJOR-h2-reject-header-values-containing-invalid.patch
+0003-BUG-MAJOR-h2-make-header-field-name-filtering-strong.patch
+
+# 20200402 security issue (no CVE) about HTTP/2 HPACK header table
+0001-BUG-CRITICAL-hpack-never-index-a-header-into-the-hea.patch
+
+# applied during the build process:
+# debianize-dconv.patch
+
+0001-BUILD-chunk-properly-declare-pool_head_trash-as-exte.patch
+
+change-declare-http_cache_applet-as-extern.patch
+
+haproxy-tpm-support.patch
