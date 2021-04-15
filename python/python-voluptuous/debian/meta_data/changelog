@@ -1,0 +1,81 @@
+voluptuous (0.11.1-1.tis) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Set Vcs-* to salsa.debian.org
+  * d/copyright: Use https protocol in Format field
+  * Convert git repository from git-dpm to gbp layout
+
+  [ Thomas Goirand ]
+  * New upstream release.
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 31 Aug 2018 09:36:01 +0200
+
+voluptuous (0.9.3-1) unstable; urgency=medium
+
+  * New upstream release.
+  * d/patches:
+    - restore-tests.patch: Removed; fixed upstream.
+    - add-voluptuous-tests.patch: Added so nose can find the tests during
+      package build.
+
+ -- Barry Warsaw <barry@debian.org>  Wed, 03 Aug 2016 10:34:27 -0400
+
+voluptuous (0.9.2-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Fixed homepage (https)
+  * Fixed VCS URL (https)
+
+  [ Barry Warsaw ]
+  * d/watch: Update to use pypi.debian.net redirector.
+  * d/rules:
+    - Simplify and make consistent with team guidelines.
+    - Use PYBUILD_TEST_NOSE=1 to enable upstream build-time test suite.
+      (Closes: #818388)
+  * d/control:
+    - Bump Standards-Version to 3.9.8 with no other changes needed.
+    - Add myself to Uploaders.
+    - wrap-and-sort -t -a
+  * d/gbp.conf: Removed; seems unnecessary now.
+  * d/patches/restore-tests.patch: Added to restore and enable tests which
+    aren't included in the PyPI tarball.
+
+ -- Barry Warsaw <barry@debian.org>  Tue, 02 Aug 2016 18:22:12 -0400
+
+voluptuous (0.8.11-1) experimental; urgency=medium
+
+  * New upstream release.
+
+ -- Thomas Goirand <zigo@debian.org>  Thu, 02 Jun 2016 14:58:35 +0000
+
+voluptuous (0.8.8-1) unstable; urgency=medium
+
+  * New upstream release (Closes: #817269).
+  * Add myself as Uploaders: and ran wrap-and-sort -t -a.
+  * Standards-Version: 3.9.7 (no change).
+  * HTTPS URLs in debian/control.
+  * Renamed git-buildpackage into buildpackage in debian/gbp.conf.
+  * Updated watch file to not use the github redir anymore.
+  * Fixed short and long desc to specify Python version.
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 11 Mar 2016 15:10:06 +0000
+
+voluptuous (0.8.2-1) unstable; urgency=low
+
+  [ Jakub Wilk ]
+  * Use canonical URIs for Vcs-* fields.
+
+  [ Robert S. Edmonds ]
+  * New upstream release.
+  * Add myself to Uploaders.
+  * Add python3-voluptous binary package.
+  * Build for only the default Python and Python 3 versions.
+  * Install README.md file.
+
+ -- Robert S. Edmonds <edmonds@debian.org>  Fri, 18 Oct 2013 14:44:42 -0400
+
+voluptuous (0.6.1-1) unstable; urgency=low
+
+  * Initial release. (Closes: #698354)
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 17 Apr 2013 09:40:58 +0000

@@ -1,0 +1,45 @@
+python-webencodings (0.5.1-2.tis) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Bump Standards-Version to 4.4.1.
+  * d/control: Remove ancient X-Python3-Version field.
+
+  [ Debian Janitor ]
+  * Bump debhelper from old 9 to 12.
+  * Set upstream metadata fields: Repository, Repository-Browse.
+
+  [ Sandro Tosi ]
+  * Drop python2 support; Closes: #938256
+
+ -- Sandro Tosi <morph@debian.org>  Mon, 13 Apr 2020 17:51:08 -0400
+
+python-webencodings (0.5.1-1) unstable; urgency=medium
+
+  [ Barry Warsaw ]
+  * d/control: Put DPMT in Maintainers and myself in Uploaders.
+
+  [ Ondřej Nový ]
+  * d/control: Set Vcs-* to salsa.debian.org
+  * d/copyright: Use https protocol in Format field
+  * d/control: Remove ancient X-Python-Version field
+  * Convert git repository from git-dpm to gbp layout
+
+  [ Scott Kitterman ]
+  * New upstream release
+  * Bump standards-version to 4.3.0 without further change
+  * Add autopkgtest
+
+ -- Scott Kitterman <scott@kitterman.com>  Mon, 24 Dec 2018 17:31:09 -0500
+
+python-webencodings (0.5-2) unstable; urgency=medium
+
+  * d/rules: Run tests via nose at build time.
+  * d/control: Add python{,3}-nose to Build-Depends.
+
+ -- Barry Warsaw <barry@debian.org>  Thu, 05 Jan 2017 10:30:19 -0500
+
+python-webencodings (0.5-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #842738)
+
+ -- Barry Warsaw <barry@debian.org>  Fri, 11 Nov 2016 16:16:54 -0500
