@@ -1,0 +1,20 @@
+tss2 (1045-1.2.tis) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Add missing dependency libtss-dev -> libtss0. (Closes: #905155)
+  * Add patch max_path.patch to fix FTBFS on hurd-i386. (Closes: #871705)
+
+ -- Luca Boccassi <bluca@debian.org>  Sun, 16 Sep 2018 13:01:30 +0100
+
+tss2 (1045-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix libtss.so symlink in libtss-dev. (Closes: #872225)
+
+ -- Luca Boccassi <bluca@debian.org>  Sat, 24 Mar 2018 13:42:22 +0000
+
+tss2 (1045-1) unstable; urgency=low
+
+  * Initial release (Closes: #861779)
+
+ -- Hon Ching (Vicky) Lo <honclo@linux.vnet.ibm.com>  Wed, 26 Jul 2017 13:38:40 -0400
