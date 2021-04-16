@@ -1,0 +1,18 @@
+Source: python-3parclient
+Section: unknown
+Priority: optional
+Maintainer: <>
+Build-Depends: debhelper-compat (= 12), dh-python, python3-dev, python3-setuptools
+Build-Depends-Indep: python3-flask, python3-httplib2, python3-nose, python3-werkzeug
+Standards-Version: 4.5.0
+Homepage: <insert the upstream URL, if relevant>
+
+Package: python-3parclient
+Architecture: any
+Multi-Arch: foreign
+Depends: ${misc:Depends}, ${shlibs:Depends}, python3-httplib2
+Description: client library that can talk to the HP 3PAR Storage array
+ hp3parclient is a Client library that can talk to the HP 3PAR Storage array.
+ The 3PAR storage array has a REST web service interface as of 3.1.2 of the
+ firmware. This client library implements a simple interface to talking with
+
