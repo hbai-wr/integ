@@ -1,0 +1,30 @@
+#!/usr/bin/make -f
+
+UPSTREAM_GIT = https://github.com/hpe-storage/python-lefthandclient.git
+include /usr/share/openstack-pkg-tools/pkgos.make
+
+%:
+	dh $@ --buildsystem=python_distutils --with python3,sphinxdoc
+
+override_dh_auto_clean:
+	echo "Do nothing..."
+
+override_dh_auto_build:
+	echo "Do nothing..."
+
+override_dh_auto_test:
+	echo "Do nothing..."
+
+override_dh_auto_install:
+	pkgos-dh_auto_install --no-py2
+
+#ifeq (,$(findstring nocheck, $(DEB_BUILD_OPTIONS)))
+#	set -e && cd test && nosetests --tc-file config.ini
+#endif
+
+override_dh_sphinxdoc:
+ifeq (,$(findstring nodoc, $(DEB_BUILD_OPTIONS)))
+	python3 -m sphinx -b html docs debian/python-lefthandclient-doc/usr/share/doc/python-lefthandclient-doc/html
+	rm debian/python-lefthandclient-doc/usr/share/doc/python-lefthandclient-doc/html/_static/empty_dir
+	dh_sphinxdoc
+endif
