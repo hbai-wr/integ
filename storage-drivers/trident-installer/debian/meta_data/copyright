@@ -1,0 +1,69 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: trident-installer
+Upstream-Contact: <preferred name and address to reach the upstream project>
+Source: <url://example.com>
+#
+# Please double check copyright with the licensecheck(1) command.
+
+Files:     deploy/bundle.yaml
+           deploy/clusterrole.yaml
+           deploy/clusterrolebinding.yaml
+           deploy/crds/trident.netapp.io_tridentprovisioners_crd_post1.16.yaml
+           deploy/crds/trident.netapp.io_tridentprovisioners_crd_pre1.16.yaml
+           deploy/crds/tridentprovisioner_cr.yaml
+           deploy/crds/tridentprovisioner_cr_customimage.yaml
+           deploy/crds/tridentprovisioner_cr_default.yaml
+           deploy/crds/tridentprovisioner_cr_imagepullsecrets.yaml
+           deploy/kustomization.yaml
+           deploy/operator.yaml
+           deploy/podsecuritypolicy_unprivileged.yaml
+           deploy/serviceaccount.yaml
+           sample-input/backend-aws-cvs-virtual-pools.json
+           sample-input/backend-aws-cvs.json
+           sample-input/backend-eseries-iscsi-virtual-pools.json
+           sample-input/backend-eseries-iscsi.json
+           sample-input/backend-gcp-cvs-virtual-pools.json
+           sample-input/backend-gcp-cvs.json
+           sample-input/backend-ontap-nas-advanced.json
+           sample-input/backend-ontap-nas-economy-virtual-pools.json
+           sample-input/backend-ontap-nas-economy.json
+           sample-input/backend-ontap-nas-flexgroup-virtual-pools.json
+           sample-input/backend-ontap-nas-flexgroup.json
+           sample-input/backend-ontap-nas-virtual-pools.json
+           sample-input/backend-ontap-nas.json
+           sample-input/backend-ontap-san-advanced.json
+           sample-input/backend-ontap-san-economy-virtual-pools.json
+           sample-input/backend-ontap-san-economy.json
+           sample-input/backend-ontap-san-virtual-pools.json
+           sample-input/backend-ontap-san.json
+           sample-input/backend-solidfire-virtual-pools.json
+           sample-input/backend-solidfire.json
+           sample-input/pvc-advanced.yaml
+           sample-input/pvc-basic-beta.yaml
+           sample-input/pvc-basic-clone.yaml
+           sample-input/pvc-basic-import.yaml
+           sample-input/pvc-basic.yaml
+           sample-input/pvc-default-class.yaml
+           sample-input/storage-class-aws-cvs-advanced.yaml
+           sample-input/storage-class-basic.yaml.templ
+           sample-input/storage-class-bronze-default.yaml
+           sample-input/storage-class-csi.yaml.templ
+           sample-input/storage-class-gold-regex.yaml
+           sample-input/storage-class-ontapnas-gold.yaml
+           sample-input/storage-class-ontapnas-k8s1.8-mountoptions.yaml
+           sample-input/storage-class-silver.json
+           sample-input/storage-class-solidfire-bronze.yaml
+           sample-input/volume-advanced.json
+           sample-input/volume.json
+Copyright: __NO_COPYRIGHT_NOR_LICENSE__
+License:   __NO_COPYRIGHT_NOR_LICENSE__
+
+#----------------------------------------------------------------------------
+# huge files   (skipped):
+#         tridentctl
+#         extras/bin/trident
+#         extras/macos/bin/tridentctl
+
+#----------------------------------------------------------------------------
+# Files marked as NO_LICENSE_TEXT_FOUND may be covered by the following
+# license/copyright files.
