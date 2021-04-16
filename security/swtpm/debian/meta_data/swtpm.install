@@ -1,4 +1,6 @@
 #! /usr/bin/dh-exec
 /usr/bin/swtpm
 /usr/share/man/man8/swtpm.8*
-/etc/libvirt/setup_vtpm
+
+
+debian/setup_vtpm /etc/libvirt
