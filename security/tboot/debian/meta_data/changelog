@@ -1,0 +1,5 @@
+tboot (1.9.12+hg20200718-1.tis) unstable; urgency=medium
+
+  * Initial release (Closes: #803180)
+
+ -- Timo Lindfors <timo.lindfors@iki.fi>  Fri, 14 Aug 2020 22:11:59 +0300
