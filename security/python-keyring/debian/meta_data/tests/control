@@ -1,0 +1,6 @@
+Tests: secretstorage-python3
+Depends: gnome-keyring (>= 3.11.92),
+         python3-all,
+         python3-keyring,
+         python3-pytest
+Restrictions: allow-stderr

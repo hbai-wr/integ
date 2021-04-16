@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ --parallel
+
+override_dh_auto_configure:
+	NOCONFIGURE=1 ./autogen.sh
+	dh_auto_configure -- --with-openssl --with-gnutls --without-cuse
+
+override_dh_usrlocal:
+
+override_dh_auto_test:
+	SWTPM_TEST_SECCOMP_OPT="--seccomp action=none" make -j4 check VERBOSE=1
+
+override_dh_install:
+	install -d -m 0755 debian/tmp/etc/libvirt
+	cp -R setup_vtpm debian/tmp/etc/libvirt
+	dh_install --sourcedir=debian/tmp
