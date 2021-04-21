@@ -1,0 +1,3 @@
+version=3
+opts="uversionmangle=s/(rc\d+)/~$1/" \
+  http://oss.linbit.com/drbd/ drbd-utils-(.*).tar.gz

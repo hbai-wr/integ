@@ -1,0 +1,47 @@
+From 72388950e27b31dda38456881428e70cea1cd149 Mon Sep 17 00:00:00 2001
+From: Roland Kammerer <roland.kammerer@linbit.com>
+Date: Mon, 26 Jun 2017 16:28:20 +0200
+Subject: [PATCH] fix major()/minor() use on recent glibc
+
+Modern glibc started to spill the following warnings:
+
+warning: In the GNU C Library, "minor" is defined by <sys/sysmacros.h>.
+For historical compatibility, it is currently defined by <sys/types.h>
+as well, but we plan to remove this soon. To use "minor", include
+<sys/sysmacros.h> directly. If you did not intend to use a
+system-defined macro "minor", you should undefine it after including
+<sys/types.h>.
+
+We had that 3 times in different tools, adding it to shared_tool.h was
+the easiest to fix all of them. RHEL 5, the oldest distribution we still
+support, has that include file.
+---
+ user/drbdtool_common.h | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/user/drbdtool_common.h b/user/drbdtool_common.h
+index f9be92cb..3156e434 100644
+--- a/user/drbdtool_common.h
++++ b/user/drbdtool_common.h
+@@ -6,6 +6,7 @@
+ #include <unistd.h>
+ #include <stdarg.h>
+ #include <linux/major.h>
++#include <sys/sysmacros.h>
+ 
+ #define LANANA_DRBD_MAJOR 147	/* we should get this into linux/major.h */
+ #ifndef DRBD_MAJOR
+diff --git a/user/legacy/drbdtool_common.h b/user/legacy/drbdtool_common.h
+--- a/user/legacy/drbdtool_common.h
++++ b/user/legacy/drbdtool_common.h
+@@ -6,6 +6,7 @@
+ #include <unistd.h>
+ #include <stdarg.h>
+ #include <linux/major.h>
++#include <sys/sysmacros.h>
+ 
+ #define LANANA_DRBD_MAJOR 147	/* we should get this into linux/major.h */
+ #ifndef DRBD_MAJOR
+-- 
+2.17.1
+
