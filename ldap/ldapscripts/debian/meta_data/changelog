@@ -1,0 +1,229 @@
+ldapscripts (2.0.8-2.tis) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Trim trailing whitespace.
+  * Use versioned copyright format URI.
+  * Use secure URI in debian/watch.
+  * Bump debhelper from old 9 to 12.
+  * Set upstream metadata fields: Archive, Contact, Name.
+  * debian/copyright: use spaces rather than tabs to start continuation
+    lines.
+  * Wrap long lines in changelog entries: 2.0.7-2.
+  * Set upstream metadata fields: Repository.
+  * Remove obsolete fields Contact, Name from debian/upstream/metadata
+    (already present in machine-readable debian/copyright).
+
+  [ Alexander Gerasiov ]
+  * d/control: Bump Standards-Version, no changes needed.
+
+ -- Alexander GQ Gerasiov <gq@debian.org>  Wed, 06 Jan 2021 20:07:50 +0300
+
+ldapscripts (2.0.8-1) unstable; urgency=medium
+
+  * New upstream version 2.0.8
+  * debian/patches refreshed.
+
+ -- Alexander GQ Gerasiov <gq@debian.org>  Thu, 27 Jul 2017 18:12:35 +0300
+
+ldapscripts (2.0.7-2) unstable; urgency=medium
+
+  * debian/rules: Fix typo. Thanks Chris Lamb <lamby@debian.org>.
+    (Closes: #834578.)
+
+ -- Alexander GQ Gerasiov <gq@debian.org>  Mon, 07 Nov 2016 03:07:25 +0300
+
+ldapscripts (2.0.7-1) unstable; urgency=medium
+
+  [ James Valleroy ]
+  * Use SASLAUTH from /etc/nslcd.conf (sasl_mech). (Closes: #825240)
+
+  [ Alexander GQ Gerasiov ]
+  * Imported Upstream version 2.0.7
+  * debian/copyright: Bump year in copyright records.
+  * debian/control: Bump standard's version, no changes needed.
+
+ -- Alexander GQ Gerasiov <gq@debian.org>  Wed, 20 Jul 2016 00:44:06 +0300
+
+ldapscripts (2.0.6-1) unstable; urgency=medium
+
+  * Imported Upstream version 2.0.6 (Closes: #795927)
+  * Update debian/patches.
+  * Remove CDBS dependency and switch to DH 9+.
+  * debian/copyright: Convert to machine-readable format.
+  * Bump Standard's version, no changes needed.
+  * Update Vcs-* headers.
+
+ -- Alexander GQ Gerasiov <gq@debian.org>  Mon, 31 Aug 2015 17:19:08 +0300
+
+ldapscripts (2.0.5-1) unstable; urgency=low
+
+  * Imported Upstream version 2.0.5
+  * Removed 06_builtin_locale.patch: fixed upstream.
+  * debian/control: Update description. (Closes: #686140)
+  * 02_debian_config.patch refreshed.
+  * New patch 06_fix_logname.patch fixes logname invocation issues.
+    (Closes: #719295)
+  * debian/runtime.debian: Fix awk invocation. Should fix (LP: #1225440).
+  * New patch 07_fix_log_perm.patch fixes permissions of log file.
+  * New patch 08_fix_log_entry.patch fixes log entry when runtime is sourced
+    from file with whitespaces.
+  * debian/control: Bump Standard's version: no changes needed.
+
+ -- Alexander GQ Gerasiov <gq@debian.org>  Tue, 01 Oct 2013 22:21:54 +0400
+
+ldapscripts (2.0.1-2) unstable; urgency=low
+
+  * Depend on nslcd instead of libnss-ldap, and us it's config.
+      (Closes: #610971, #681266.)
+  * debian/runtime.debian: Specify default value for GCLASS. (Closes: #671613)
+  * debian/control: Fix 'Perl' writing. (Closes: #656172.)
+  * debian/control: Standards-version updated, no changes needed.
+
+ -- Alexander GQ Gerasiov <gq@debian.org>  Mon, 27 Aug 2012 04:38:33 +0400
+
+ldapscripts (2.0.1-1) unstable; urgency=low
+
+  * Imported Upstream version 2.0.1
+  * Updated debian/patches/05_mktemp.patch.
+  * Removed debian/patches/07_fix_free_uid_search.patch (fixed upstream).
+  * debian/control: Replace PERL wirh Perl (Closes: #620473).
+  * debian/control: Standards-version updated, no changes needed.
+
+ -- Alexander GQ Gerasiov <gq@debian.org>  Mon, 16 Jan 2012 02:21:44 +0400
+
+ldapscripts (1.10.0-1) unstable; urgency=low
+
+  * debian/control: Standards-version updated, no changes needed.
+  * Imported Upstream version 1.10.0
+  * debian/patches: Patches refreshed.
+  * Added 07_fix_free_uid_search.patch. Thanks to Slavko
+    <linux@slavino.sk> (Closes: #609148)
+  * debian/control: DEB_FIXPERMS_EXCLUDE replaced with
+    DEB_FIXPERMS_EXCLUDE_ALL.
+
+ -- Alexander GQ Gerasiov <gq@debian.org>  Mon, 21 Mar 2011 17:45:15 +0300
+
+ldapscripts (1.9.0-3) unstable; urgency=low
+
+  * Use pwgen as password generator by default. Closes: #592369.
+  * runtime.debian: Fix nss-ldap.conf parsing. Closes: #601942.
+  * debian/control: Suggests libnss-ldap, not libpam-ldap.
+  * Bump standard's version, no changes needed.
+
+ -- Alexander GQ Gerasiov <gq@debian.org>  Thu, 23 Dec 2010 15:35:18 +0300
+
+ldapscripts (1.9.0-2) unstable; urgency=low
+
+  * Switching to new dpkg v3 (quilt) format.
+  * Fix problem with "not built-it" warnings in some locales. Closes: #555561.
+  * debian/patches: Added DEP-3 annotations.
+  * Bump standard's version, no changes needed.
+
+ -- Alexander GQ Gerasiov <gq@debian.org>  Tue, 11 May 2010 15:55:03 +0400
+
+ldapscripts (1.9.0-1) unstable; urgency=low
+
+  * Imported Upstream version 1.9.0
+  * watch file added.
+  * Bump standard's version, no changes needed.
+  * Removed: 01_makefile_destdir.patch, 04_logname_replace.patch,
+    06_nouuencode_pwgen.patch and most of
+    debian/patches/03_fix_manpages.patch. Were fixed upstream.
+
+ -- Alexander GQ Gerasiov <gq@debian.org>  Fri, 23 Oct 2009 14:16:44 +0400
+
+ldapscripts (1.8.0-3) unstable; urgency=low
+
+  * Fix permissions for ldapscripts.passwd. Also add lintian-overrides
+    for it.
+  * Update my e-mail address.
+
+ -- Alexander GQ Gerasiov <gq@debian.org>  Mon, 06 Jul 2009 00:54:10 +0400
+
+ldapscripts (1.8.0-2) unstable; urgency=low
+
+  * runtime.debian: fix warnings appears if libpam-ldap not installed.
+  * runtime.debian: replace usage of libpam-ldap with libnss-ldap, because
+    ldapscripts recommends the second one.
+  * runtime.debian: replace egrep|sed|cut with simple awk.
+  * runtime.debian: fix error if host but not uri is specified in
+    libnss-ldap.conf.
+  * Add README.Debian with some info.
+  * Add VCS info in debian/control.
+  * Remove debian/ldapscripts.conf as it's not used anymore.
+
+ -- Alexander GQ Gerasiov <gq@cs.msu.su>  Sun, 05 Jul 2009 14:51:40 +0400
+
+ldapscripts (1.8.0-1) unstable; urgency=low
+
+  * New upstream release. (Closes: #471500, #494101, #502678, #504698, #457251.)
+  * Change Maintainer field (closes: #495221).
+  * Add 01_makefile_destdir.patch, to allow make install into DESTDIR.
+  * Add 02_debian_config.patch to use patched upstream config, but not one from
+    debian/ dir as it was in the previous versions. Original config patched to
+    allow user not to configure ldapscripts themself, but use configuration from
+    libnss-ldap and libldap. debian/runtime.debian is also updated.
+    (Closes: #502673, #375794.)
+  * Add 03_fix_manpages.patch to fix various warnings lintian points to.
+  * Description updated from Ubuntu patches.
+  * Fix debian/control: no more require slapd, libpam-ldap; libnss-ldap and
+    shareutils are now proposed and recommended, policy updated to 3.8.2,
+    Homepage field added.
+  * Add 04_logname_replace.patch: use "id -nu" instead of "logname", because
+    logname wouldn't work if program has no control terminal.
+  * Add 05_mktemp.patch: use mktemp instead of hacks with /dev/urandom.
+  * Add 06_nouuencode_pwgen: pwgen command without uuencode, to remove
+    dependence from shareutils.
+
+ -- Alexander GQ Gerasiov <gq@cs.msu.su>  Wed, 24 Jun 2009 18:00:23 +0400
+
+ldapscripts (1.7.1-2) unstable; urgency=low
+
+  * New upstream release:
+     + Has the fix for CVE-2007-5373 (Closes: #445582).
+     + User can now modify ldiff skeleton (Closes: #405755).
+  * Make upstream support DESTDIR in its makefile.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Sun, 21 Oct 2007 12:27:03 +0200
+
+ldapscripts (1.4-2etch1) stable-security; urgency=low
+
+  [ Steffen Joeris ]
+  * Incorporate changes from upstream security version 1.7.1 and patch
+    etc/runtime (Closes: #445582) for CVE-2007-5373.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Sun, 21 Oct 2007 12:03:31 +0200
+
+ldapscripts (1.4-2) unstable; urgency=low
+
+  * Fix debian magic computation of GIDSTART/UIDSTART.
+    thanks to Philippe Bourdeu d'Aguerre.
+  * Bump standards version to 3.7.2 (no changes required).
+
+ -- Pierre Habouzit <madcoder@debian.org>  Wed, 17 May 2006 11:05:17 +0200
+
+ldapscripts (1.4-1) unstable; urgency=low
+
+  * New upstream release.
+  * Add missing dependency upon sharutils (closes: #340785).
+  * Updated FSF address.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Sun,  8 Jan 2006 19:13:45 +0100
+
+ldapscripts (1.3-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Tue, 25 Oct 2005 00:33:31 +0200
+
+ldapscripts (1.2-2) unstable; urgency=low
+
+  * Typo in default config (forgot a ldapscripts/).
+
+ -- Pierre Habouzit <madcoder@debian.org>  Sun, 21 Aug 2005 16:53:31 +0200
+
+ldapscripts (1.2-1) unstable; urgency=low
+
+  * Initial Release (closes: #324296).
+
+ -- Pierre Habouzit <madcoder@debian.org>  Sun, 21 Aug 2005 16:23:01 +0200

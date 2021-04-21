@@ -1,0 +1,31 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_usrlocal:
+
+override_dh_auto_install:
+	$(MAKE) install DESTDIR=debian/ldapscripts PREFIX=/usr ETCDIR=/etc/ldapscripts LIBDIR=/usr/share/ldapscripts MANDIR=/usr/share/man
+	cp debian/runtime.debian debian/ldapscripts/usr/share/ldapscripts
+	rm debian/ldapscripts/etc/ldapscripts/*.sample
+	$(MAKE) install DESTDIR=debian/ldapscripts PREFIX=/usr ETCDIR=/usr/local/etc/ldapscripts
+	install -m 755 ldapscripts.conf.cgcs debian/ldapscripts/usr/local/etc/ldapscripts
+	install -m 755 ldapadduser.template.cgcs debian/ldapscripts/usr/local/etc/ldapscripts
+	install -m 755 ldapaddgroup.template.cgcs debian/ldapscripts/usr/local/etc/ldapscripts
+	install -m 755 ldapmoduser.template.cgcs debian/ldapscripts/usr/local/etc/ldapscripts
+	install -m 755 ldapaddsudo.template.cgcs debian/ldapscripts/usr/local/etc/ldapscripts
+	install -m 755 ldapmodsudo.template.cgcs debian/ldapscripts/usr/local/etc/ldapscripts
+	install -m 644 ldapscripts.passwd debian/ldapscripts/usr/local/etc/ldapscripts
+
+override_dh_installdocs:
+	dh_installdocs README TODO
+
+override_dh_installchangelogs:
+	dh_installchangelogs CHANGELOG
+
+override_dh_installexamples:
+	dh_installexamples etc/*.sample
+
+override_dh_fixperms:
+	dh_fixperms --exclude etc/ldapscripts/ldapscripts.passwd

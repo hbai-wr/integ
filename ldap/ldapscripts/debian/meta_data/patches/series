@@ -1,0 +1,10 @@
+02_debian_config.patch
+03_fix_manpages.patch
+05_mktemp.patch
+07_fix_log_perm.patch
+sudo-support.patch
+sudo-delete-support.patch
+log_timestamp.patch
+ldap-user-setup-support.patch
+allow-anonymous-bind-for-ldap-search.patch
+ldapscripts-templates.patch
