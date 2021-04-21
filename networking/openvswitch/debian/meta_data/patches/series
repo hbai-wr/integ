@@ -1,0 +1,3 @@
+remove-include-debian-automake.mk.patch
+py3-compat.patch
+run-services-as-root-user.patch
