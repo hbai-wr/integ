@@ -1,0 +1,26 @@
+From f05f0ff673296a9f6d099c6ce892319988ae60b9 Mon Sep 17 00:00:00 2001
+From: Hongxu Jia <hongxu.jia@windriver.com>
+Date: Tue, 23 Mar 2021 15:55:01 +0000
+Subject: [PATCH 04/24] disable runtime test
+
+Signed-off-by: Hongxu Jia <hongxu.jia@windriver.com>
+---
+ debian/rules | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/debian/rules b/debian/rules
+index 0bd728c2..77a746b2 100755
+--- a/debian/rules
++++ b/debian/rules
+@@ -49,7 +49,7 @@ override_dh_auto_configure:
+ override_dh_auto_test-arch:
+ ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
+ 	chmod +x tests/test-pull-bareuseronly.sh
+-	debian/test.sh
++	#debian/test.sh
+ endif
+ 
+ override_dh_auto_test-indep:
+-- 
+2.17.1
+

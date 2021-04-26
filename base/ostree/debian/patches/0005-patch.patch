@@ -1,0 +1,25 @@
+From 5464a3b5267b4a0bd02e7111b98af9a92096c97f Mon Sep 17 00:00:00 2001
+From: Hongxu Jia <hongxu.jia@windriver.com>
+Date: Wed, 24 Mar 2021 01:53:17 +0000
+Subject: [PATCH 05/24] patch
+
+Signed-off-by: Hongxu Jia <hongxu.jia@windriver.com>
+---
+ patch.sh | 5 +++++
+ 1 file changed, 5 insertions(+)
+ create mode 100644 patch.sh
+
+diff --git a/patch.sh b/patch.sh
+new file mode 100644
+index 00000000..aa44f4c8
+--- /dev/null
++++ b/patch.sh
+@@ -0,0 +1,5 @@
++patches=`cat debian/patches/series`
++for p in $patches; do
++  echo "git am debian/patches/${p}"
++  git am debian/patches/${p}
++done
+-- 
+2.17.1
+
