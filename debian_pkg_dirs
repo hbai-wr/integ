@@ -85,3 +85,8 @@ python/python-webencodings
 python/python-daemon
 base/inih
 base/pf-bb-config
+tools/dmraid
+ostree/initramfs-ostree
+ostree/mttyexec
+ostree/ostree-upgrade-mgr
+ostree/ostree
