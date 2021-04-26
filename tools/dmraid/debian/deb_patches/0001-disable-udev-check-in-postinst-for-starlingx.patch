@@ -1,0 +1,29 @@
+From 02d5774381415d21b2b85ab58b92b5ae6e2ff971 Mon Sep 17 00:00:00 2001
+From: Hongxu Jia <hongxu.jia@windriver.com>
+Date: Sat, 27 Mar 2021 06:24:39 +0000
+Subject: [PATCH] disable udev check in postinst for starlingx
+
+While installing at offline, the udev check in postinst is not
+necessary and breaks failures
+
+Signed-off-by: Hongxu Jia <hongxu.jia@windriver.com>
+---
+ debian/dmraid.postinst | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/debian/dmraid.postinst b/debian/dmraid.postinst
+index c2af68b..ce92a2e 100644
+--- a/debian/dmraid.postinst
++++ b/debian/dmraid.postinst
+@@ -9,7 +9,7 @@ case "$1" in
+ 	    update-initramfs -u
+     fi
+     # Activate existing arrays now.
+-    udevadm trigger --subsystem-match=block --action=change
++    #udevadm trigger --subsystem-match=block --action=change
+ 
+     if [ -f /etc/init.d/dmraid ]; then
+   	update-rc.d -f dmraid remove
+-- 
+2.17.1
+
