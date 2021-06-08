@@ -1,0 +1,8 @@
+--- a/debian/changelog
++++ b/debian/changelog
+@@ -1,4 +1,4 @@
+-dnsmasq (2.85-1) unstable; urgency=low
++dnsmasq (2.85-1.tis) unstable; urgency=low
+ 
+    * New upstream.
+    * Includes fix to CVE-2021-3448.

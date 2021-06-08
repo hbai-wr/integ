@@ -1,0 +1,3 @@
+801-inject-millisec-in-syslog-date.patch
+802-fix-build-error-for-unused-variable.patch
+skip-test-dhcp-server.patch

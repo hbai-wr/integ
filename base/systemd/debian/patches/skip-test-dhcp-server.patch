@@ -1,0 +1,14 @@
+--- a/src/test/meson.build
++++ b/src/test/meson.build
+@@ -1103,11 +1103,6 @@ tests += [
+           libsystemd_network],
+          []],
+ 
+-        [['src/libsystemd-network/test-dhcp-server.c'],
+-         [libshared,
+-          libsystemd_network],
+-         []],
+-
+         [['src/libsystemd-network/test-ipv4ll.c',
+           'src/libsystemd-network/arp-util.h',
+           'src/systemd/sd-ipv4ll.h'],

@@ -1,0 +1,6 @@
+python-keyring (5.7.1-1.tis) unstable; urgency=medium
+
+  * New upstream release.
+  * Use https in debian/watch.
+
+ -- Yue Tao <yue.tao@windriver.com>  Tue, 23 Mar 2021 23:24:02 +0200
