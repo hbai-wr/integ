@@ -146,15 +146,28 @@ ask_fix_label() {
 	done
 }
 
+# The valid dev should be none of rom disk or read only disk
+check_valid_dev() {
+	local heading
+	local res
+	instdev=$1
+	lsblk -n --nodeps -o RM,RO $instdev | grep -q "0  0"
+	res=$?
+	if [ $res -ne 0 ];then
+		echo "$instdev is rom disk or readonly disk"
+	fi
+	return $res
+}
+
 ask_dev() {
 	local 'heading' 'inp' 'i' 'reply' 'reply2' 'out' 'choices'
 	fix_part_labels=0
-	heading="    `lsblk -o NAME,VENDOR,SIZE,MODEL,TYPE |head -n 1`"
+	heading="    `lsblk -o NAME,VENDOR,SIZE,MODEL,TYPE,RM,RO |head -n 1`"
 	while [ 1 ] ; do
 		choices=()
 		while IFS="" read -r inp; do
 			choices+=("$inp")
-		done<<< $(lsblk -o NAME,VENDOR,SIZE,MODEL,TYPE |grep disk)
+		done<<< $(lsblk -n -o NAME,VENDOR,SIZE,MODEL,TYPE,RM,RO |grep disk |grep "0  0$")
 		echo "$heading"
 		for i in ${!choices[@]}; do
 			[ "${choices[$i]}" = "" ] && continue
@@ -866,6 +879,7 @@ while [ $retry -lt $MAX_TIMEOUT_FOR_WAITING_LOWSPEED_DEVICE ] ; do
 		if [ "${i#PUUID=}" != "$i" ] ; then
 			idev=$(blkid -o device -l -t PARTUUID=${i#PUUID=})
 			if [ "$idev" != "" ] ; then
+				check_valid_dev $idev || continue
 				INSTDEV=/dev/$(lsblk $idev -n -o pkname)
 				fail=0
 				break
@@ -873,6 +887,7 @@ while [ $retry -lt $MAX_TIMEOUT_FOR_WAITING_LOWSPEED_DEVICE ] ; do
 		elif [ "${i#UUID=}" != "$i" ] ; then
 			idev=$(blkid --uuid ${i#UUID=})
 			if [ "$idev" != "" ] ; then
+				check_valid_dev $idev || continue
 				INSTDEV=/dev/$(lsblk $idev -n -o pkname)
 				fail=0
 				break
@@ -880,11 +895,13 @@ while [ $retry -lt $MAX_TIMEOUT_FOR_WAITING_LOWSPEED_DEVICE ] ; do
 		elif [ "${i#LABEL=}" != "$i" ] ; then
 			idev=$(blkid --label ${i#LABEL=})
 			if [ "$idev" != "" ] ; then
+				check_valid_dev $idev || continue
 				INSTDEV=/dev/$(lsblk $idev -n -o pkname)
 				fail=0
 				break
 			fi
 		elif [ -e $i ] ; then
+			check_valid_dev $i || continue
 			INSTDEV=$i
 			echo "Installing to: $i"
 			fail=0
